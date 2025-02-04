@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    command: python app.py
+    volumes:
+      - .:/app
+    ports:
+      - "8080:8080"
+    environment:
+      - FLASK_APP=app.py
+      - FLASK_DEBUG=1
+      - MONGO_URI=mongodb://mongo:27017/mydatabase  # Connect to 'mongo' service
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"  # Expose MongoDB port (optional)
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:
