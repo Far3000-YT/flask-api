@@ -1,0 +1,1 @@
+Just the beginning of a flask API, with MongoDB (no PostgreSQL since I don't like the tables format, MongoDB = json = seems better in term of understanding / using it in general) + need to find a purpose for this project, maybe v2 of the project management app api, so migration from spring boot to flask)
